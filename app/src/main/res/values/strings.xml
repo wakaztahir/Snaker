@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Snaker</string>
+    <string name="left_btn">Left Button</string>
+    <string name="right_btn">Right Button</string>
+    <string name="up_btn">Up Button</string>
+    <string name="down_btn">Down Button</string>
+    <string name="gameOver">Game Over</string>
+    <string name="tryAgain">Try Again</string>
+</resources>
