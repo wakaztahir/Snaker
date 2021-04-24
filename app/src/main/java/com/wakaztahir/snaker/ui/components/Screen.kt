@@ -209,7 +209,7 @@ fun Snaker(
                     newY >= curY &&
                     newY <= curY + state.snakeHeight
                 ) {
-                    onSelfBite()
+//                    onSelfBite() todo snake bite is not working
                 }
             }
 
