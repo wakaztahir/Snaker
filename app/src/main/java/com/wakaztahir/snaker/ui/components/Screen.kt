@@ -169,9 +169,7 @@ fun Snaker(
                 }
             }
 
-
             //Updating Snake Tail Divisions
-
             var prevX = newX
             var prevY = newY
 
@@ -199,17 +197,28 @@ fun Snaker(
                 tailDiv.x.value = curX
                 tailDiv.y.value = curY
 
-
                 //Self Bite Detection
-                if (//X
-                    index>3 &&
-                    newX >= curX &&
-                    newX <= curX + state.snakeWidth &&
-                    //Y
-                    newY >= curY &&
-                    newY <= curY + state.snakeHeight
-                ) {
-//                    onSelfBite() todo snake bite is not working
+                when (state.movementDirection) {
+                    SnakeDirection.Left -> {
+                        if (newX < (curX + state.snakeWidth) && newX > curX && newY > curY && newY < (curY + state.snakeHeight)) {
+                            onSelfBite()
+                        }
+                    }
+                    SnakeDirection.Up -> {
+                        if (newY > curY && newY < (curY + state.snakeHeight) && newX > curX && newX < (curX + state.snakeWidth)) {
+                            onSelfBite()
+                        }
+                    }
+                    SnakeDirection.Right -> {
+                        if ((newX + state.snakeWidth) > curX && (newX + state.snakeWidth) < (curX + state.snakeWidth) && newY > curY && newY < (curY + state.snakeHeight)) {
+                            onSelfBite()
+                        }
+                    }
+                    SnakeDirection.Down -> {
+                        if ((newY + state.snakeHeight) > curY && (newY + state.snakeHeight) < (curY + state.snakeHeight) && newX > curX && newX < (curX + state.snakeWidth)) {
+                            onSelfBite()
+                        }
+                    }
                 }
             }
 
