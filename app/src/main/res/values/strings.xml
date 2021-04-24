@@ -6,4 +6,6 @@
     <string name="down_btn">Down Button</string>
     <string name="gameOver">Game Over</string>
     <string name="tryAgain">Try Again</string>
+    <string name="your_score">Your Score</string>
+    <string name="scores">Scores</string>
 </resources>

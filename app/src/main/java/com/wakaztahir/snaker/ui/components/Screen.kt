@@ -22,7 +22,8 @@ fun Snaker(
     state: SnakerState = rememberSnakerState(7),
     snakeColor: Color = MaterialTheme.colors.primary,
     foodColor: Color = MaterialTheme.colors.secondary,
-    onSelfBite: () -> Unit = {}
+    onSelfBite: () -> Unit = {},
+    onFoodConsumption: () -> Unit = {}
 ) {
     //Snake variables
     val snakeX = remember { mutableStateOf(0f) }
@@ -235,6 +236,9 @@ fun Snaker(
                 state.snakeTail = state.snakeTail + state.foodValue
                 //Changing food coordinates
                 placeFood()
+
+                //Calling food consumption
+                onFoodConsumption()
             }
         }
 
